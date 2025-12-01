@@ -11,27 +11,35 @@ class Day1Suite extends AnyFlatSpec with Matchers {
 
   it should "modulo" in {
     -5 / 100 shouldBe 0
-
     (50-68) % 100 shouldBe -18
-
   }
 
   it should "part1Test" in {
     day.part1(day.getTestInput) shouldBe 3
   }
+
   it should "part1" in {
     day.part1(day.getInput) shouldBe 1
   }
+
   it should "part2Test" in {
-    day.part2(day.getTestInput) shouldBe 1
+    day.part2(day.getTestInput) shouldBe 6
   }
+
   it should "part2" in {
     day.part2(day.getInput) shouldBe >(2185)
-    day.part2(day.getInput) shouldBe 1
+    day.part2(day.getInput) shouldBe 6027
+  }
 
+  it should "part2 smallest" in {
+    day.part2(Seq("R1000")) shouldBe 10
   }
 
   it should "part2 small" in {
-    day.part2(Seq("R1000")) shouldBe 10
+    day.part2(Seq("L50", "L5")) shouldBe 1
+  }
+
+  it should "part2 edge" in {
+    day.part2(Seq("R45", "R60")) shouldBe 1
   }
 }
